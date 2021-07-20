@@ -7,10 +7,9 @@
 - Create a Private app on Shopify
 - Add the credentials to a `.env` file in the project directory
 ```
-API_KEY=''
-PASSWORD=''
+ACCESS_TOKEN=''
 SHOP_NAME='my-awesome-store-for-dev'
-API_VERSION='2020-07'
+API_VERSION='2021-04'
 ```
 - Import some products and customers through Shopify Dashboard. You can use the exports provided in the [data folder](/data) (generated using [simple-sample-data](https://apps.shopify.com/simple-sample-data) app). 
 - Install the dependencies

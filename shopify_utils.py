@@ -12,13 +12,13 @@ def fetch_mandatory_env_var(key):
     return val
 
 
-API_KEY = fetch_mandatory_env_var('API_KEY')
-PASSWORD = fetch_mandatory_env_var('PASSWORD')
 SHOP_NAME = fetch_mandatory_env_var('SHOP_NAME')
 API_VERSION = fetch_mandatory_env_var('API_VERSION')
+ACCESS_TOKEN = fetch_mandatory_env_var('ACCESS_TOKEN')
 
-shop_url = F"https://{API_KEY}:{PASSWORD}@{SHOP_NAME}.myshopify.com/admin/api/{API_VERSION}"
-shopify.ShopifyResource.set_site(shop_url)
+shop_url = F"{SHOP_NAME}.myshopify.com"
+session = shopify.Session(shop_url, API_VERSION, ACCESS_TOKEN)
+shopify.ShopifyResource.activate_session(session)
 
 
 def publish(obj, target_class):
